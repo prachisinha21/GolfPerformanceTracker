@@ -9,10 +9,10 @@ fun ShotDto.toEntity(): ShotEntity {
         id = id.orEmpty(),
         playerId = playerId.orEmpty(),
         clubType = clubType.orEmpty(),
-        ballSpeed = ballSpeed ?: 0.0,
-        launchAngle = launchAngle ?: 0.0,
-        carryDistance = carryDistance ?: 0.0,
-        spinRate = spinRate ?: 0,
+        ballSpeed = ballSpeed?.toDoubleOrNull() ?: 0.0,
+        launchAngle = launchAngle?.toDoubleOrNull() ?: 0.0,
+        carryDistance = carryDistance?.toDoubleOrNull() ?: 0.0,
+        spinRate = spinRate?.toIntOrNull() ?: 0,
         recordedAt = recordedAt.orEmpty()
     )
 }

@@ -6,14 +6,13 @@ import com.prachisinha.golfperformancetracker.domain.model.Player
 
 fun PlayerDto.toEntity(): PlayerEntity {
     return PlayerEntity(
-        id = id.orEmpty(),
+        id = id,
         name = name.orEmpty(),
         club = club.orEmpty(),
         country = country.orEmpty(),
-        handicap = handicap ?: 0,
-        avgBallSpeed = avgBallSpeed ?: 0.0,
-        avgCarryDistance = avgCarryDistance ?: 0.0,
-
+        handicap = handicap?.toIntOrNull() ?: 0,
+        avgBallSpeed = avgBallSpeed?.toDoubleOrNull() ?: 0.0,
+        avgCarryDistance = avgCarryDistance?.toDoubleOrNull() ?: 0.0,
         avatarUrl = avatarUrl.orEmpty()
     )
 }

@@ -3,12 +3,12 @@ package com.prachisinha.golfperformancetracker.data.remote.dto
 import com.google.gson.annotations.SerializedName
 
 data class PlayerDto(
-    @SerializedName("id") val id: String?,
-    @SerializedName("name") val name: String?,
-    @SerializedName("club") val club: String?,
-    @SerializedName("country") val country: String?,
-    @SerializedName("handicap") val handicap: Int?,
-    @SerializedName("avgBallSpeed") val avgBallSpeed: Double?,
-    @SerializedName("avgCarryDistance") val avgCarryDistance: Double?,
-    @SerializedName("avatarUrl") val avatarUrl: String?
+    val id: String,
+    val name: String?,
+    val club: String?,
+    val country: String?,
+    val handicap: String?,
+    val avgBallSpeed: String?,
+    val avgCarryDistance: String?,
+    val avatarUrl: String?
 )

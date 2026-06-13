@@ -42,20 +42,43 @@ class GolfRepositoryImpl @Inject constructor(
     override suspend fun refreshPlayers() {
         val players = golfApi.getPlayers()
 
-        playerDao.clearPlayers()
+        val validPlayers = players.filter { player ->
+            !player.name.isNullOrBlank() &&
+                    !player.club.isNullOrBlank() &&
+                    !player.country.isNullOrBlank() &&
+                    player.handicap?.toIntOrNull() != null &&
+                    player.avgBallSpeed?.toDoubleOrNull() != null &&
+                    player.avgCarryDistance?.toDoubleOrNull() != null
+        }
 
-        playerDao.insertPlayers(
-            players.map { it.toEntity() }
-        )
+        if (validPlayers.isNotEmpty()) {
+            playerDao.clearPlayers()
+
+            playerDao.insertPlayers(
+                validPlayers.map { it.toEntity() }
+            )
+        }
     }
 
     override suspend fun refreshShots() {
         val shots = golfApi.getShots()
 
-        shotDao.clearShots()
+        val validShots = shots.filter { shot ->
+            !shot.id.isNullOrBlank() &&
+                    !shot.playerId.isNullOrBlank() &&
+                    !shot.clubType.isNullOrBlank() &&
+                    shot.ballSpeed?.toDoubleOrNull() != null &&
+                    shot.launchAngle?.toDoubleOrNull() != null &&
+                    shot.carryDistance?.toDoubleOrNull() != null &&
+                    shot.spinRate?.toIntOrNull() != null
+        }
 
-        shotDao.insertShots(
-            shots.map { it.toEntity() }
-        )
+        if (validShots.isNotEmpty()) {
+            shotDao.clearShots()
+
+            shotDao.insertShots(
+                validShots.map { it.toEntity() }
+            )
+        }
     }
 }

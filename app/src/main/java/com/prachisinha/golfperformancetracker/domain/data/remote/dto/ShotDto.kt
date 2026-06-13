@@ -7,23 +7,23 @@ data class ShotDto(
     @SerializedName("id")
     val id: String?,
 
-     @SerializedName("playerId")
+    @SerializedName("playerId")
     val playerId: String?,
 
     @SerializedName("clubType")
     val clubType: String?,
 
     @SerializedName("ballSpeed")
-    val ballSpeed: Double?,
+    val ballSpeed: String?,
 
     @SerializedName("launchAngle")
-    val launchAngle: Double?,
+    val launchAngle: String?,
 
     @SerializedName("carryDistance")
-    val carryDistance: Double?,
+    val carryDistance: String?,
 
     @SerializedName("spinRate")
-    val spinRate: Int?,
+    val spinRate: String?,
 
     @SerializedName("recordedAt")
     val recordedAt: String?
