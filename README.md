@@ -153,7 +153,7 @@ text data ├── local │   ├── dao │   ├── database │   ├
 
 ## Architecture
 
-text Presentation Layer        │        ▼     ViewModel        │        ▼     Repository        │    ┌───┴────┐    ▼        ▼  Remote    Room    API    Database
+text UI (Jetpack Compose)         │         ▼     ViewModel         │         ▼     Repository      ┌──┴──┐      ▼     ▼  Retrofit  Room    API   Database
 
 The Repository acts as the Single Source of Truth and coordinates data between the network layer and local database.
 
@@ -185,8 +185,6 @@ The application follows an Offline-First Architecture.
 
 ### Players List
 
-Features:
-
 - Player avatars
 - Search functionality
 - Player statistics overview
@@ -194,15 +192,11 @@ Features:
 
 ### Search & Filter
 
-Features:
-
 - Search by player name
 - Search by club
 - Real-time filtering
 
 ### Player Details
-
-Features:
 
 - Profile information
 - Performance metrics
@@ -211,8 +205,6 @@ Features:
 
 ### Recent Shots
 
-Features:
-
 - Shot history
 - Ball speed
 - Carry distance
@@ -220,8 +212,6 @@ Features:
 - Spin rate
 
 ### Analytics Dashboard
-
-Features:
 
 - Distance distribution visualization
 - Speed vs distance comparison
