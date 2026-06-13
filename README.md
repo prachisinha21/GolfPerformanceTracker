@@ -147,15 +147,41 @@ The application avoids manual Thread management and uses Coroutines because:
 
 ## Project Structure
 
-text data ├── local │   ├── dao │   ├── database │   ├── entity │   └── mapper │ ├── remote │   ├── adapters │   └── api │ └── repository  domain ├── model └── repository  presentation ├── analytics ├── navigation ├── players ├── playerdetails └── components  di ├── DatabaseModule ├── NetworkModule └── RepositoryModule
+- data
+    - local
+        - dao
+        - database
+        - entity
+        - mapper
+    - remote
+        - adapters
+        - api
+    - repository
+- domain
+    - model
+    - repository
+- presentation
+    - analytics
+    - navigation
+    - players
+    - playerdetails
+    - components
+- di
+    - DatabaseModule
+    - NetworkModule
+    - RepositoryModule
 
 ---
 
 ## Architecture
 
-text UI (Jetpack Compose)         │         ▼     ViewModel         │         ▼     Repository      ┌──┴──┐      ▼     ▼  Retrofit  Room    API   Database
+- UI Layer: Jetpack Compose screens render the user interface.
+- ViewModel Layer: ViewModels manage UI state and expose StateFlow to the UI.
+- Repository Layer: Repository acts as the Single Source of Truth.
+- Remote Layer: Retrofit API fetches data from the network.
+- Local Layer: Room Database stores cached data for offline access.
 
-The Repository acts as the Single Source of Truth and coordinates data between the network layer and local database.
+The Repository coordinates data between the network layer and local database.
 
 ---
 
@@ -222,25 +248,24 @@ The application follows an Offline-First Architecture.
 
 ## Screenshots
 
-### Players List
+Add screenshots in the repository under a folder named `screenshots`.
 
-Players List
+Recommended file names:
 
-### Search & Filter
+- `01_players_list.png`
+- `02_search_filter.png`
+- `03_player_details.png`
+- `04_recent_shots.png`
+- `05_analytics_dark_mode.png`
+- `06_dark_mode.png`
 
-Search Filter
+After adding the files, screenshots will be available at:
 
-### Player Details
-
-Player Details
-
-### Recent Shots
-
-Recent Shots
-
-### Analytics Dashboard (Dark Mode)
-
-Analytics Dashboard
+- screenshots/01_players_list.png
+- screenshots/02_search_filter.png
+- screenshots/03_player_details.png
+- screenshots/04_recent_shots.png
+- screenshots/05_analytics_dark_mode.png
 
 ---
 
@@ -248,48 +273,5 @@ Analytics Dashboard
 
 ### Clone Repository
 
-bash git clone https://github.com/prachisinha21/GolfPerformanceTracker.git
-
-### Open Project
-
-1. Open Android Studio
-2. Select Open
-3. Choose the cloned project folder
-4. Allow Gradle Sync to complete
-
-### Run Application
-
-1. Start an Android Emulator or connect a physical device
-2. Click Run
-3. Launch the application
-
----
-
-## Assignment Highlights
-
-- MVVM Architecture
-- Clean Architecture
-- Repository Pattern
-- Single Source of Truth
-- Offline-First Design
-- Room Database Integration
-- Retrofit Networking
-- Hilt Dependency Injection
-- Kotlin Coroutines
-- StateFlow
-- Search & Filter Functionality
-- Analytics Dashboard
-- Dark Theme Support
-- Avatar Support
-- Jetpack Compose UI
-- Material Design 3
-- Reactive State Management
-- Modern Android Development Practices
-
----
-
-## Author
-
-Prachi Sinha
-
-GitHub: https://github.com/prachisinha21
+```bash
+git clone https://github.com/prachisinha21/GolfPerformanceTracker.git
