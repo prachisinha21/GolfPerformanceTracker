@@ -175,7 +175,7 @@ The application follows an offline-first architecture.
 1. Clone the repository
 
 ```bash
-git clone git clone https://github.com/prachisinha21/GolfPerformanceTracker.git
+git clone https://github.com/prachisinha21/GolfPerformanceTracker.git
 ```
 
 2. Open in Android Studio
