@@ -496,12 +496,14 @@ Theme Characteristics:
 
 <p align="center">
   <img src="screenshots/06_dark_mode.png" width="300"/>
+  <img src="screenshots/07_dark_mode.png" width="300"/>
 </p>
 
 # Build & Run
 
 ## Prerequisites
 
+- Android Studio Narwhal or newer
 - Android Studio Narwhal or newer
 - JDK 11+
 - Android SDK 24+
