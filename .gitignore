@@ -1,16 +1,69 @@
+# Gradle
+
+.gradle/
+build/
+**/build/
+
+# Local configuration
+
+local.properties
+
+# Android Studio
+
+.idea/
 *.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
+
+# Keystore files
+
+*.jks
+*.keystore
+
+# Log files
+
+*.log
+
+# macOS
+
 .DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
-local.properties
-local.properties
+
+# Captures
+
+captures/
+
+# Kotlin
+
+.kotlin/
+
+# Generated files
+
+generated/
+
+# Navigation Safe Args
+
+.navigation/
+
+# Android Studio caches
+
+.cxx/
+
+# Firebase / Crashlytics
+
+firebase-crashlytics.properties
+
+# Signing configs
+
+signing.properties
+
+# Temporary files
+
+tmp/
+temp/
+
+# APKs & Bundles
+
+*.apk
+*.aab
+
+# IntelliJ
+
+out/

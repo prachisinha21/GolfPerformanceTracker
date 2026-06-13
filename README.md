@@ -6,7 +6,7 @@ Android application built for the Rapsodo Android Assignment.
 
 Golf Performance Tracker allows users to browse golf players, analyze performance metrics, view shot statistics, and access data offline.
 
-The application demonstrates modern Android development practices using MVVM architecture, Room persistence, Hilt dependency injection, Retrofit networking, Coroutines, and Jetpack Compose.
+The application demonstrates modern Android development practices using MVVM architecture, Room persistence, Hilt dependency injection, Retrofit networking, Coroutines, StateFlow, and Jetpack Compose.
 
 ---
 
@@ -14,9 +14,9 @@ The application demonstrates modern Android development practices using MVVM arc
 
 ### Player Management
 
-* View all players
-* Search and filter players
-* View player performance statistics
+* View all golf players
+* Search and filter players by name or club
+* Display player performance metrics
 
 ### Player Details
 
@@ -37,7 +37,7 @@ The application demonstrates modern Android development practices using MVVM arc
 
 ### Analytics Dashboard
 
-* Distance Distribution
+* Distance Distribution Chart
 * Speed vs Distance Analysis
 * Club Usage Chart
 
@@ -50,10 +50,10 @@ The application demonstrates modern Android development practices using MVVM arc
 ### UI Features
 
 * Material Design 3
+* Jetpack Compose
 * Light Theme
 * Dark Theme
-* Compose-based UI
-* Analytics animation
+* Analytics animations
 
 ---
 
@@ -119,16 +119,17 @@ di
 
 ```text
 Presentation Layer
-     │
-     ▼
- ViewModel
-     │
-     ▼
- Repository
-     │
- ┌───┴────┐
- ▼        ▼
-API     Room
+       │
+       ▼
+    ViewModel
+       │
+       ▼
+    Repository
+       │
+   ┌───┴────┐
+   ▼        ▼
+ Remote    Room
+   API    Database
 ```
 
 The Repository acts as the Single Source of Truth and coordinates data between the network and local storage.
@@ -141,8 +142,15 @@ The application follows an offline-first architecture.
 
 1. Data is fetched from the remote API.
 2. Data is cached locally using Room.
-3. UI observes Room data through Flow.
+3. UI observes local data through StateFlow.
 4. Users can continue using the application without network connectivity.
+
+Benefits:
+
+* Faster loading
+* Better user experience
+* Reduced network dependency
+* Persistent local storage
 
 ---
 
@@ -164,25 +172,32 @@ The application follows an offline-first architecture.
 
 ![Recent Shots](./screenshots/04_recent_shots.png)
 
-### Analytics Dashboard
+### Analytics Dashboard (Dark Mode)
 
-![Analytics](./screenshots/05_analytics_dark_mode.png)
+![Analytics Dashboard](./screenshots/05_analytics_dark_mode.png)
 
 ---
 
 ## Setup Instructions
 
-1. Clone the repository
+### Clone Repository
 
 ```bash
 git clone https://github.com/prachisinha21/GolfPerformanceTracker.git
 ```
 
-2. Open in Android Studio
+### Open Project
 
-3. Sync Gradle
+1. Open Android Studio
+2. Select **Open**
+3. Choose the cloned project folder
+4. Allow Gradle Sync to complete
 
-4. Run the application
+### Run Application
+
+1. Start an Android Emulator or connect a physical device
+2. Click **Run**
+3. Launch the application
 
 ---
 
@@ -190,14 +205,21 @@ git clone https://github.com/prachisinha21/GolfPerformanceTracker.git
 
 * MVVM Architecture
 * Repository Pattern
-* Room Persistence
 * Offline-First Design
+* Room Database Integration
 * Hilt Dependency Injection
+* Retrofit Networking
 * Search & Filter Functionality
 * Analytics Dashboard
 * Dark Theme Support
 * Jetpack Compose UI
 * Material Design 3
 
-```
-```
+---
+
+## Author
+
+**Prachi Sinha**
+
+GitHub:
+https://github.com/prachisinha21
