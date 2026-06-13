@@ -1,6 +1,6 @@
 # Golf Performance Tracker ⛳
 
-An Android application built as part of the Rapsodo Android Engineering Assignment.
+An Android application built as part of Android Engineering Assignment.
 
 ---
 
@@ -486,16 +486,10 @@ Theme Characteristics:
   <img src="screenshots/03_player_details.png" width="300"/>
 </p>
 
-## Recent Shots
-
-<p align="center">
-  <img src="screenshots/04_recent_shots.png" width="300"/>
-</p>
-
 ## Analytics Dashboard
 
 <p align="center">
-  <img src="screenshots/05_analytics_dark_mode.png" width="300"/>
+  <img src="screenshots/04_recent_shots.png" width="300"/>
 </p>
 
 ## Dark Mode Support
